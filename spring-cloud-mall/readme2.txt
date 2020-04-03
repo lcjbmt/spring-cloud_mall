@@ -92,5 +92,5 @@
 53 ����HttpContext�࣬����mimeTypeMapping�࣬���Ǵ���SAXReader�ֽ���ȥ���ļ����ٶ��Ĺ��������ļ���ȥ��conf�ļ��µ�web.xml�ĵ�
 54 ����һ��Document��ʵ����Ȼ������ͨ�����ʵ��ȥ��ȡ��Ԫ�أ�����ǩ��������һ��Element��ʵ����ͨ��Element�ṩ�ķ�����ȡ������mime-mapping
 55 ͬ�����ӱ�ǩ��������Ǳ��������ӱ�ǩ����web.xml�ļ���mime-mapping��ǩ�µ�extendinos��Ϊkeyֵ����mimeTypeMapping���ϣ���web.xml�ļ���mime-type
-56 ��Ϊvalue����mimeTypeMapping������///////
+56 ��Ϊvalue����mimeTypeMapping������//////
 
