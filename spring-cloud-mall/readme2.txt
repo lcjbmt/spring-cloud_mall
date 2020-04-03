@@ -1,96 +1,96 @@
-ÏêÏ¸²½Öè£º
-1£º´´½¨WebServerµÄÀà£¬´´½¨Ò»¸östart·½·¨À´ÔËÐÐ³ÌÐò£¬´´½¨min·½·¨£¬
-      ÔÚminÂú·½·¨ÖÐ°ÑWebServer¶ÔÏó´´½¨³öÀ´£¬È»ºó°Ñstart·½·¨ÔËÐÐÆðÀ´¡£
-2£ºÔÚWebServeÖÐ½«serverÊôÐÔ´´½¨³öÀ´£¬ÔÚ¹¹Ôì·½·¨ÖÐ½«serverÊµÀý»¯£¬½«¶Ë¿Ú´´½¨³öÀ´
-3£ºÔÚstartÖÐÀûÓÃSocket accept×èÈû·½·¨µÈ´ýä¯ÀÀÆ÷Á¬½Ó£¬ÎªÁËÊ¹¶à¸ö¿Í»§¶ËÄÜÓë·þÎñÆ÷Á¬½Ó£¬ÎÒÃÇ½«Á¬½Ó·ÅÈëwhileÑ­»·
-4£ºÎªÁËÌá¸ßÐ§ÂÊÎÒÃÇ½«»ñÈ¡µÄÊäÈëÁ÷·Åµ½Ïß³ÌClientHanderÖÐÈ¥ÔËÐÐ
-5£ºÔÚClientHanderÖÐ´´½¨SocketÊôÐÔ£¬È»ºóÔÙ¹¹Ôì·½·¨ÖÐÊµÀý³öÀ´¡£
-6£ºÔÚRUN·½·¨ÖÐ´¦Àí¿Í»§¶Ë·´ËÍ¹ýÀ´µÄÇëÇó£¬»ñÈ¡ÊäÈëÁ÷£¬½«ÊäÈëÁ÷ÖÐµÄÄÚÈÝ¶Á³öÀ´
-7£ºÎªÁË´úÂë¸´ÓÃ£¬ÎÒÃÇ½«¿Í»§¶Ë·¢ËÍ¹ýÀ´µÄÇëÇó·Åµ½HttpRequestÀàÖÐÈ¥Ð´
-8: ÔÚHttpRequestÀàÖÐÎÒÃÇ´´½¨Èý¸öÊôÐÔ£ºÇëÇóÐÐ¡¢ÏûÏ¢Í·¡¢ÏûÏ¢ÕýÎÄ¡£ÔÚ¹¹Ôì·½·¨ÖÐ½«ÆäÊµÀý»¯
-9£º½«Èý¸öÊôÐÔµÄget·½·¨´´½¨³öÀ´
-10£ºÔÚWebRequestÀàstartÖÐ´´½¨HttpRequest¶ÔÏó£¬½«»ñÈ¡µÄÊäÈëÁ÷¸ø½øÈ¥£¬ÔÚHttpRequestÀà¹¹Ôì·½·¨ÖÐ´«ÈëÊäÈëÁ÷¡£
-11£º½âÎöÇëÇóÐÐ£¬´´½¨Ò»¸öÇëÇóÐÐ·½·¨°ÑÊäÈëÁ÷´«½øÈ¥£¬´´½¨Ò»¸öStringBuilderµÄ¶ÔÏó£¬È»ºóÈ¥¶Á£¬½«¶Á³öÀ´µÄÇëÇóÐÐ°´ÕÕ¿Õ¸ñ
-           ½øÐÐ²ð·Ö£¬½«²ð·Ö³öÀ´µÄÈý²¿·Ö·Ö±ðÉèÖÃµ½¶ÔÓ¦µÄÊôÐÔÉÏ
-12£ºÔÚWebSERVERµÄrun·½·¨ÖÐÏìÓ¦¿Í»§¶Ë¡£ÏìÓ¦¿Í»§¶Ë·ÖÎªÈý²¿£ºÏò¿Í·þ¶Ë£¬·¢ËÍÏìÓ¦×´Ì¬¡¢ÏìÓ¦Í·¡¢ÏìÓ¦ÕýÎÄ¡£
-13£ºÊ×ÏÈ»ñÈ¡ÎÄ¼þ£¬È»ºóÅÐ¶ÏÎÄ¼þÊÇ·ñ´æÔÚ£¬Èç¹ûÎÄ¼þ´æÔÚ£¬Ê×ÏÈ·¢ËÍÏìÓ¦×´Ì¬
-14: ´´½¨Êä³öÁ÷£¬±àÐ´×´Ì¬"HTTP/1.1 200 OK"£¬½«Æä×ª»»Îª"ISO8859-1"¸ñÊ½»Ø¸´¸ø¿Í»§¶Ë
-15£ºÆä´Î·¢ËÍÏìÓ¦Í·£¬±àÐ´ÏìÓ¦Í·"Content-Type:text/html"£¬½«Æä×ª»»Îª"ISO8859-1"¸ñÊ½»Ø¸´¸ø¿Í»§¶Ë£¬²¢ÇÒ½«ÕýÎÄ³¤¶ÈÒ²»Ø¸´¸ø¿Í»§¶Ë
-16£º×îºó·¢ËÍÏìÓ¦ÕýÎÄ£¬ÀûÓÃÎÄ¼þÁ÷È¥¶ÁÈ¡fileÎÄ¼þ£¬È»ºó½«ÆäÐ´³öÀ´
-17£ºÎªÁË´úÂëµÄ¸´ÓÃ£¬ÎÒÃÇ½«ÏìÓ¦¿Í»§¶ËµÄ´úÂë·Åµ½HttpResponseÀàÖÐÈ¥Ö´ÐÐ
-18: ÔÚHttpResponseÀàÖÐÎÒÃÇ´´½¨¶þ¸öÊôÐÔ£ºÏò¿Í»§¶ËÏìÓ¦ÎÄ¼þµÄÊä³öÁ÷¡°out¡±ºÍÏìÓ¦¸ø¿Í»§¶ËµÄÎÄ¼þ×ÊÔ´"entity"¡£
-         ´´½¨¹¹Ôì·½·¨£¬½«Êä³öÁ÷´«Èë½øÀ´£¬ÔÚ¹¹Ôì·½·¨ÖÐ½«Á½¸öÊôÐÔÊµÀý»¯¡£
-19£º½«entityµÄget·½·¨Ð´³öÀ´
-20: ´´½¨FlushµÄÀàÈ¥ÏìÓ¦¿Í»§¶Ë
-21£º´´½¨Èý¸öÀà£º×´Ì¬ÐÐÐÅÏ¢Àà¡¢ÏìÓ¦Í·ÐÅÏ¢¡¢ÏìÓ¦ÕýÎÄ
-22£ºÎªÁË¼õÉÙ´úÂëÁ¿ÎÒÃÇ½«Èý¸÷Àà¶¼Òª×öµÄÊÂ·Åµ½ÁíÒ»¸öÀà"println()"ÖÐÈ¥Ö´ÐÐ
-23£ºÔÚ×´Ì¬ÐÅÏ¢ÀàÖÐÎÒÃÇµ÷ÓÃprintln·½·¨½«×´Ì¬»Ö¸´»ØÈ¥£¬ÔÚÏìÓ¦Í·ÐÅÏ¢ÖÐµ÷ÓÃprintln½«ÏìÓ¦Í·ÐÅÏ¢»Ö¸´»ØÈ¥£¬
-        ÔÚÏìÓ¦ÕýÎÄÖÐÁËÀûÓÃÎÄ¼þÁ÷¶ÁÈ¡ÎÄ¼þ×ÊÔ´entity£¬È»ºó½«ÆäÐ´³ö
-24: ÔÚflush·½·¨ÖÐÈ¥µ÷ÓÃÉÏÃæÈý¸ö·½·¨¡£ÔÚWebServerµÄrun·½·¨ÖÐ´´½¨HttpResponse¶ÔÏó¡£
-25£ºÐÂ½¨Ò»¸öContextµÄÀàÓÃÓÚ¶¨ÒåÏà¹ØµÄHttpÐ­ÒéµÄÄÚÈÝ
-26£ºÔÚÕâ¸öÀàÀïÊ×ÏÈÎÒÃÇ´´½¨Ò»¸ömimeTypeMappingµÄÊôÐÔ£¬ÓÃÓÚ³äµ±ÏàÓ¦µÄ½éÖÊÀàÐÍÓ³ÉäºÍÁ½¸ö¾²Ì¬³£Á¿CR\LF.
-27: ´´½¨Ò»¸öinitµÄÀà×÷Îª³õÊ¼»¯½éÖÊÀàÐÍÓ³Éä£¬È»ºó´´½¨Ò»¸ö¾²Ì¬¿é£¬ÔÚ¾²Ì¬¿éÀïÈ¥µ÷ÓÃinit·½·¨£¬µ±ÎÒÃÇ³ÌÐòÔËÐÐÆðÀ´ºó£¬
-¾²Ì¬¿é¾Í±»×Ô¶¯¼ÓÔØ¡£
-28£º´´½¨initMimeTypeMappingµÄÀà×÷Îª³õÊ¼»¯½éÖÊÀàÐÍÓ³Éä£¬È»ºóÔÚinitÀàÀïÈ¥µ÷ÓÃinitMimeTypeMapping·½·¨
-29£ºÔÚinitMimeTypeMappingÕâ¸öÀàÀïÎÒÃÇ´´½¨Ò»¸öMap¼¯ºÏ£¬¼¯ºÏÀïÌí¼Ó4¸öÀàËÆ"text/html"µÄºó×º
-30£º¸Ä¶¯
-	Ë¼Â·£º1£ºÊ×ÏÈµ±¿Í»§¶Ë·ÃÎÊÎÒÃÇ·þÎñ¶ËÊ±¾Í»á½øÈëWebServerµÄClintHanderÀà£¬½øÈëÖ®ºó¾Í»á½øÈëRUN·½·¨
-	2:½øÈërun·½·¨ºó´´½¨ÁËÁ½¸ö¶ÔÏó£ºResponseºÍRequest¡£
-	3£ºµ±Response¶ÔÏó´´½¨³öÀ´ºó£¬ÀïÃæÓÐ¸öÊôÐÔheaders,ÐÂ½¨ÁËÒ»¸öMap¼¯ºÏ£¬ÊÇ¿ÕµÄ¡£
-	4£ºÍ¨¹ýuriÎÒÃÇÐÂ½¨ÁËfileÎÄ¼þ³öÀ´£¬Ê×ÏÈÅÐ¶ÏÎÄ¼þÊÇ·ñ´æÔÚ£¬Èç¹û´æÔÚ£¬¿ªÊ¼ÏàÓ¦¿Í»§¶Ë
-	5£ºÏìÓ¦·ÖÎªÈý²¿£ºÉèÖÃ×´Ì¬ÐÐ£¬ÉèÖÃÏìÓ¦Í·£¬ÉèÖÃÏìÓ¦ÕýÎÄ
-	   ¢Ù£ºÉèÖÃÏìÓ¦Í·£ºÉèÖÃcontent-TypeºÍcontentlength
-	   	a£ºcontentType£ºÊ×ÏÈ»ñÈ¡ÎÄ¼þºó×º£¬È»ºóÍ¨¹ýÎÄ¼þºó×ºÕÒµ½content-TypeµÄÖµ£¬
-	   	´ËÊ±ÎÒÃÇ¾ÍÒªµ÷ÓÃHttpContext.getContentTypeByMime(name)·½·¨
-	   	È¥»ñÈ¡¡£È»ºó½øÈëHttpContextÕâ¸öÀà£¬½øÈëµ½Õâ¸öÀàºó£¬¾²Ì¬¿é¾Í¿ªÊ¼¼ÓÔØ£¬¾Í¿ªÊ¼µôinit·½·¨£¬
-	   	½øÈëµ½initÀà·½·¨ºó¿ªÊ¼µ÷ContentTypeByMimeÀàµÄ·½·¨³õÊ¼»¯ËùÓÐÓ³Éä
-	   	½øÈëµ½ContentTypeByMimeÀà£¬ÎÒÃÇÔÚMapÖÐ·ÅÈë4¸ö"html", "text/html"ÕâÑùÀàÐÍµÄ¶«Î÷£¬
-	   	´ËÊ±ContentTypeByMime¾Í³õÊ¼»¯ºÃÁË
-	   	È»ºóÎÒÃÅ»Øµ½run·½·¨£¬´ËÊ±ÎÒÃÇÍ¨¹ýHttpContextÈ¥µôgetContentTypeByMime·½·¨£¬Ëû»á·µ»ØÒ»¸öÖµ¸øÎÒÃÇ
-	   	ÎÒÃÇ½øµ½Õâ¸ö·½·¨£¬ÎÒÃÅ°Ñ¸Õ½ØÈ¡³öÀ´µÄÎÄ¼þºó×º¸ø½øÈ¥£¬Ëû¾Í»á°ÑcontentTypeµÄÖµ·µ»Ø¸øÎÒÃÇ
-	   	b:ËæºóÎÒÃÇ»Øµ½run·½·¨£¬¿ªÊ¼ÉèÖÃcontent-Type£¬ÎÒÃÇÍ¨¹ýresponseÈ¥µ÷ÓÃsetContentType(contentType)·½·¨
-	   	ÎÒÃÇ½øÈëµ½setContentTypeÀà£¬ÎÒÃÇ°ÑcontentTypeÌí¼Óµ½keyÀï£¬°ÑÎÒÃÇÍ¨¹ýºó×ºÄÃµ½µÄÖµ¸øµ½value£¬
-	   	È»ºóÎÒÃÇÓÖµ÷ÁËcontentlength()·½·¨£¬ÎÒÃÇ½øÈëµ½setContentTypeÀà£¬ÎÒÃÇ°ÑcontentlengthÌí¼Óµ½keyÀï,
-	   	ÎÒÃÇ°ÑÓÃ»§ÇëÇóÎÄ¼þµÄ³¤¶ÈÌí¼Óµ½valueÖÐ£¬×îºó½«Æä·µ»Ø¡£
-	    c:È»ºóµ÷ÓÃsetEntity()·½·¨,È»ºó°ÑÏëÒªÇëÇóµÄÎÄ¼þÉèÖÃ½øÈ¥
-	   	d:µ÷ÓÃflush()·½·¨£¬È»ºó°ÑÏìÓ¦Í·ÖÐµÄÐÅÏ¢·¢ËÍ¸ø¿Í»§¶Ë
-	   		¢Ù£ºÊ×ÏÈ£¬µ÷ÓÃsendStatusLine()£¬½øÈëµ½sendStatusLineÀà£¬ÎÒÃÇ°Ñ×´Ì¬·¢¹ýÈ¥
-	   		¢Ú£ºÈ»ºóµ÷ÓÃsendHeaders();ÎÒÃÇ½øÈëµ½sendHeadersÀà£¬ÎÒÃÇµ÷ÓÃµÄMapµÄset·½·¨£¬
-	   		Í¨¹ý±éÀúheaders°ÑkeyºÍvalueÆ´½ÓÔÚÒ»Æð·¢ËÍ³öÈ¥
-	   		3£º×îºóµ÷ÓÃsendContent()£¬·¢ËÍÕýÎÄ£¬ÉèÖÃÎÄ¼þµÄËùÓÐ×Ö½Ú
-	   		×îºó°ÑÉèÖÃºÃµÄÏìÓ¦Í··¢ËÍ¸ö¿Í»§¶Ë
+ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½è£º
+1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½WebServerï¿½ï¿½ï¿½à£¬ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½startï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ò£¬´ï¿½ï¿½ï¿½minï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+      ï¿½ï¿½minï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½WebServerï¿½ï¿½ï¿½ó´´½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½startï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+2ï¿½ï¿½ï¿½ï¿½WebServeï¿½Ð½ï¿½serverï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ì·½ï¿½ï¿½ï¿½Ð½ï¿½serverÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿Ú´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+3ï¿½ï¿½ï¿½ï¿½startï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Socket acceptï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½Îªï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½whileÑ­ï¿½ï¿½
+4ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ß³ï¿½ClientHanderï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½
+5ï¿½ï¿½ï¿½ï¿½ClientHanderï¿½Ð´ï¿½ï¿½ï¿½Socketï¿½ï¿½ï¿½Ô£ï¿½È»ï¿½ï¿½ï¿½Ù¹ï¿½ï¿½ì·½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+6ï¿½ï¿½ï¿½ï¿½RUNï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ý¶ï¿½ï¿½ï¿½ï¿½ï¿½
+7ï¿½ï¿½Îªï¿½Ë´ï¿½ï¿½ë¸´ï¿½Ã£ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½HttpRequestï¿½ï¿½ï¿½ï¿½È¥Ð´
+8: ï¿½ï¿½HttpRequestï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Ï¢Í·ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½Ú¹ï¿½ï¿½ì·½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½
+9ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½getï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+10ï¿½ï¿½ï¿½ï¿½WebRequestï¿½ï¿½startï¿½Ð´ï¿½ï¿½ï¿½HttpRequestï¿½ï¿½ï¿½ó£¬½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½HttpRequestï¿½à¹¹ï¿½ì·½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+11ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½StringBuilderï¿½Ä¶ï¿½ï¿½ï¿½È»ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ï¿½Õ¿Õ¸ï¿½
+           ï¿½ï¿½ï¿½Ð²ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½Ö³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·Ö±ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+12ï¿½ï¿½ï¿½ï¿½WebSERVERï¿½ï¿½runï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Í»ï¿½ï¿½Ë¡ï¿½ï¿½ï¿½Ó¦ï¿½Í»ï¿½ï¿½Ë·ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦×´Ì¬ï¿½ï¿½ï¿½ï¿½Ó¦Í·ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ä¡ï¿½
+13ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ä¼ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦×´Ì¬
+14: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´×´Ì¬"HTTP/1.1 200 OK"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Îª"ISO8859-1"ï¿½ï¿½Ê½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½
+15ï¿½ï¿½ï¿½ï¿½Î·ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦Í·ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ó¦Í·"Content-Type:text/html"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Îª"ISO8859-1"ï¿½ï¿½Ê½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½Ò²ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½
+16ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½È¥ï¿½ï¿½È¡fileï¿½Ä¼ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½
+17ï¿½ï¿½Îªï¿½Ë´ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½Ó¦ï¿½Í»ï¿½ï¿½ËµÄ´ï¿½ï¿½ï¿½Åµï¿½HttpResponseï¿½ï¿½ï¿½ï¿½È¥Ö´ï¿½ï¿½
+18: ï¿½ï¿½HttpResponseï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½outï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ëµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ô´"entity"ï¿½ï¿½
+         ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì·½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ì·½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+19ï¿½ï¿½ï¿½ï¿½entityï¿½ï¿½getï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½
+20: ï¿½ï¿½ï¿½ï¿½Flushï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½Ó¦ï¿½Í»ï¿½ï¿½ï¿½
+21ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à£º×´Ì¬ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½à¡¢ï¿½ï¿½Ó¦Í·ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½
+22ï¿½ï¿½Îªï¿½Ë¼ï¿½ï¿½Ù´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à¶¼Òªï¿½ï¿½ï¿½ï¿½ï¿½Â·Åµï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½"println()"ï¿½ï¿½È¥Ö´ï¿½ï¿½
+23ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½printlnï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½Ö¸ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦Í·ï¿½ï¿½Ï¢ï¿½Ðµï¿½ï¿½ï¿½printlnï¿½ï¿½ï¿½ï¿½Ó¦Í·ï¿½ï¿½Ï¢ï¿½Ö¸ï¿½ï¿½ï¿½È¥ï¿½ï¿½
+        ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½Ô´entityï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½
+24: ï¿½ï¿½flushï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½WebServerï¿½ï¿½runï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½HttpResponseï¿½ï¿½ï¿½ï¿½
+25ï¿½ï¿½ï¿½Â½ï¿½Ò»ï¿½ï¿½Contextï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½HttpÐ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+26ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½Ò»ï¿½ï¿½mimeTypeMappingï¿½ï¿½ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½Ú³äµ±ï¿½ï¿½Ó¦ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½CR\LF.
+27: ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½initï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ä£¬È»ï¿½ó´´½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½é£¬ï¿½Ú¾ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½initï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½Ì¬ï¿½ï¿½Í±ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½Ø¡ï¿½
+28ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½initMimeTypeMappingï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ä£¬È»ï¿½ï¿½ï¿½ï¿½initï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½initMimeTypeMappingï¿½ï¿½ï¿½ï¿½
+29ï¿½ï¿½ï¿½ï¿½initMimeTypeMappingï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Mapï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"text/html"ï¿½Äºï¿½×º
+30ï¿½ï¿½ï¿½Ä¶ï¿½
+	Ë¼Â·ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½Èµï¿½ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Í»ï¿½ï¿½ï¿½ï¿½WebServerï¿½ï¿½ClintHanderï¿½à£¬ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½RUNï¿½ï¿½ï¿½ï¿½
+	2:ï¿½ï¿½ï¿½ï¿½runï¿½ï¿½ï¿½ï¿½ï¿½ó´´½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Responseï¿½ï¿½Requestï¿½ï¿½
+	3ï¿½ï¿½ï¿½ï¿½Responseï¿½ï¿½ï¿½ó´´½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½headers,ï¿½Â½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Mapï¿½ï¿½ï¿½Ï£ï¿½ï¿½Ç¿ÕµÄ¡ï¿½
+	4ï¿½ï¿½Í¨ï¿½ï¿½uriï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½fileï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ä¼ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ó¦ï¿½Í»ï¿½ï¿½ï¿½
+	5ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½
+	   ï¿½Ù£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½content-Typeï¿½ï¿½contentlength
+	   	aï¿½ï¿½contentTypeï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½×ºï¿½ï¿½È»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½×ºï¿½Òµï¿½content-Typeï¿½ï¿½Öµï¿½ï¿½
+	   	ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ç¾ï¿½Òªï¿½ï¿½ï¿½ï¿½HttpContext.getContentTypeByMime(name)ï¿½ï¿½ï¿½ï¿½
+	   	È¥ï¿½ï¿½È¡ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½HttpContextï¿½ï¿½ï¿½ï¿½à£¬ï¿½ï¿½ï¿½ëµ½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬¾ï¿½Ì¬ï¿½ï¿½Í¿ï¿½Ê¼ï¿½ï¿½ï¿½Ø£ï¿½ï¿½Í¿ï¿½Ê¼ï¿½ï¿½initï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	   	ï¿½ï¿½ï¿½ëµ½initï¿½à·½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ContentTypeByMimeï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½
+	   	ï¿½ï¿½ï¿½ëµ½ContentTypeByMimeï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Mapï¿½Ð·ï¿½ï¿½ï¿½4ï¿½ï¿½"html", "text/html"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÍµÄ¶ï¿½ï¿½ï¿½ï¿½ï¿½
+	   	ï¿½ï¿½Ê±ContentTypeByMimeï¿½Í³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	   	È»ï¿½ï¿½ï¿½ï¿½ï¿½Å»Øµï¿½runï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½HttpContextÈ¥ï¿½ï¿½getContentTypeByMimeï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á·µï¿½ï¿½Ò»ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	   	ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å°Ñ¸Õ½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½×ºï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½contentTypeï¿½ï¿½Öµï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½
+	   	b:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç»Øµï¿½runï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½content-Typeï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½responseÈ¥ï¿½ï¿½ï¿½ï¿½setContentType(contentType)ï¿½ï¿½ï¿½ï¿½
+	   	ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ëµ½setContentTypeï¿½à£¬ï¿½ï¿½ï¿½Ç°ï¿½contentTypeï¿½ï¿½Óµï¿½keyï¿½ï£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½×ºï¿½Ãµï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½valueï¿½ï¿½
+	   	È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½contentlength()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ëµ½setContentTypeï¿½à£¬ï¿½ï¿½ï¿½Ç°ï¿½contentlengthï¿½ï¿½Óµï¿½keyï¿½ï¿½,
+	   	ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½valueï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ä·µï¿½Ø¡ï¿½
+	    c:È»ï¿½ï¿½ï¿½ï¿½ï¿½setEntity()ï¿½ï¿½ï¿½ï¿½,È»ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ã½ï¿½È¥
+	   	d:ï¿½ï¿½ï¿½ï¿½flush()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦Í·ï¿½Ðµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Í¸ï¿½ï¿½Í»ï¿½ï¿½ï¿½
+	   		ï¿½Ù£ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½sendStatusLine()ï¿½ï¿½ï¿½ï¿½ï¿½ëµ½sendStatusLineï¿½à£¬ï¿½ï¿½ï¿½Ç°ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½È¥
+	   		ï¿½Ú£ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½sendHeaders();ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ëµ½sendHeadersï¿½à£¬ï¿½ï¿½ï¿½Çµï¿½ï¿½Ãµï¿½Mapï¿½ï¿½setï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	   		Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½headersï¿½ï¿½keyï¿½ï¿½valueÆ´ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Í³ï¿½È¥
+	   		3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sendContent()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½
+	   		ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÃºÃµï¿½ï¿½ï¿½Ó¦Í·ï¿½ï¿½ï¿½Í¸ï¿½ï¿½Í»ï¿½ï¿½ï¿½
 
-32£ºÔÚHttpResponseÀàÀïÐÞ¸Ä·¢ËÍÏìÓ¦Í·Àà£¬Ê×ÏÈÎÒÃÇµ÷ÓÃMapµÄset·½·¨½«Map¼¯ºÏ±éÀú£¬È»ºóÎÒÃÇ½«±éÀú³öÀ´µÄkeyºÍvalue
-Æ´ÔÚÒ»Æð£¬×îºó·¢ËÍÃ¿Ò»¸öÏûÏ¢Í·
-33£º½âÎöÏûÏ¢Í·
-´úÂë¸Ä¶¯£º
-ÎÒÃÇ·¢ÏÖÔÚ½âÎöÏûÏ¢Í·ºÍÇëÇóÐÐµÄÊ±ºò¶¼»áÓÃµ½°´ÐÐ¶ÁÈ¡×Ö·û´®£¬ËùÒÔÎÒÃÇ½«ËûÌáµ½Ò»¸ö·½·¨ÖÐµ¥¶ÀÈ¥×ö¡£
-´´½¨Ò»¸öredLing·½·¨È¥¶ÁÈ¡×Ö·û´®
-34£ºÔÚHttpResponseÀàÀïÎÒÃÇÌí¼ÓÒ»¸öheadersµÄÊôÐÔ²¢ÒÔMap¼¯ºÏ½«Æä³õÊ¼»¯£¬×÷ÓÃÊÇ°üº¬ËùÓÐÏìÓ¦Í·ÐÅÏ¢
-35£º´´½¨Ò»¸öparseHeadersµÄÀàÈ»ºó½«ÊäÈëÁ÷ÒýÈë
-36£ºÔÚÕâ¸öÀàÀïÊ¹ÓÃwhileÑ­»·È¥¶ÁÊäÈëÁ÷£¬Ê×ÏÈÅÐ¶ÏÊÇ·ñ¶Áµ½ÁË¿Õ×Ö·û´®£¬Èç¹û²»ÊÇÎÒÃÇÈ¥´Ó²éÕÒ¶Á³öÀ´µÄÄÚÈÝÊÇ·ñ°üº¬":"
-        Èç¹û°üº¬ÎÒÃÇ°´ÕÕ¡°£º¡±£¬½«×ó±ßµÄÀàÈÝ½ØÈ¡³öÀ´¸³Öµ¸ø(key)name,½«ÓÒ±ßµÄÄÚÈÝ½ØÈ¡³öÀ´¸³Öµ¸øvalue
-        È»ºóµ÷ÓÃMap¼¯ºÏµÄSet·½·¨°Ñ½ØÈ¡³öÀ´µÄÄÚÈÝÍ¨¹ý±éÀúÌí¼Óµ½Map¼¯ºÏÖÐ¡£
-37 ½âÎöUri
-37 ½«ËûÌáµ½·½·¨ÀïÃæµ¥¶ÀÈ¥×ö
-38 Ê×ÏÈ´´½¨Ò»¸öparamµÄÊôÐÔ²¢³õÊ¼»¯
-39 ÔÚ·½·¨ÀïÃæÏÈÅÐ¶ÏuriÀïÊÇ·ñ°üº¬¡°£¿¡±£¬Èç¹û²»°üº¬ÎÒÃÇ½«uriµÄÄÚÈÝ¸³Öµµ½requestLineÊôÐÔÉÏ
-40 Èç¹û°üº¬£ºµÚÒ»²½£¬ÎÒÃÇ½«uriÀïµÄÄÚÈÝ´Ó¿ªÊ¼½ØÈ¡µ½¡°£¿¡±´¦£¬È»ºó¸³Öµ¸ørequestLineÊôÐÔ
-41 µÚ¶þ²½£¬ÎÒÃÇ½«uriÀïµÄÄÚÈÝ´Ó¡°£¿¡±ÏÂÒ»Î»¿ªÊ¼½ØÈ¡µ½Ä©Î²£¬È»ºó¸³Öµ¸ø×Ô¼º´´½¨µÄ±äÁ¿queryStr
-42 µÚÈý²½£¬ÎÒÃÇ½«queryStrÀïµÄÄÚÈÝ°´ÕÕ¡°&¡±½øÐÐ²ð·ÖµÃµ½Ò»¸öÊý×é£¬È»ºó½øÐÐ±éÀú
-43 µÚËÄ²¿£¬ÎÒÃÇ½«±éÀúºóµÄÄÚÈÝÔÙ´Î°´ÕÕ¡°=¡±½øÐÐ²ð·Ö£¬È»ºó¼Óµ½map¼¯ºÏÀï
-44 Íê³É×¢²á¹¦ÄÜ£º
-45 ÓÃ»§ÔÙ·¢ËÍÇëÇóÊ±²»Ò»¶¨ÊÇÍøÒ³×ÊÔ´£¬»¹¿ÉÄÜÊÇÄ³Ð©¹¦ÄÜ£¬ÏÂÃæÎÒÃÇ¾ÍÒÔ×¢²áÎªÊµÀýÐ´
-46 Ê×ÏÈÎÒÃÇ½øÐÐÅÐ¶ÏÓÃ»§·¢¹ýÀ´µÄÊÇ×ÊÔ´»¹ÊÇ¹¦ÄÜ£¬Èç¹ûÊÇ×ÊÔ´ÎÒÃÇ°´ÒÔÉÏ²½Öè·µ»Ø¸ø¿Í»§
-47 Èç¹ûÊÇ¹¦ÄÜ£¬Ê×ÏÈÎÒÃÇÐÂ½¨Ò»¸öÒ³Ãæ£¬°ÑÓÃ»§ÊäÈëµÄ×¢²áÐÅÏ¢ÉèÖÃºÃ£¬È»ºó»Øµ½WebSererÀà
-48 È»ºó»ñÈ¡ÓÃ»§ÊäÈëµÄ×¢²áÐÅÏ¢£¬½¨Á¢Ò»¸öÎÄ¼þÁ÷ÓÃÓÚ´æ·ÅÓÃ»§×¢²áµÄÐÅÏ¢£¬ÔÚÎÄ¼þÁ÷ÉÏ½ÖÉÏ×ª»»Á÷ºÍ»º³åÁ÷½«ÆäÐ´³ö
-49 ×îºóÔÚfinallyÀï½«×ª»»Á÷¹Ø±Õ
-50 ´úÂë¸Ä¶¯£º
-51 ÐÞ¸ÄHttpContextÀà£¬½«³õÊ¼»¯½éÖÊÓ³ÉäµÄ·½·¨ÐÞ¸Ä
-52 ÔÚÏîÄ¿Ä¿Â¼ÖÐÌí¼ÓconfÄ¿Â¼£¬²¢ÔÚÀïÃæÌí¼Óweb.xmlÎÄ¼þ£¨¸ÃÎÄ¼þÖ±½ÓÊ¹ÓÃtomcat¸ùÄ¿Â¼ÖÐ
-   confÄ¿Â¼ÖÐµÄÕâ¸öÎÄ¼þ£©
-53 ½øÈëHttpContextÀà£¬½øÈëmimeTypeMappingÀà£¬ÎÒÃÇ´´½¨SAXReader×Ö½ÚÁ÷È¥¶ÁÎÄ¼þ£¬ÔÙ¶ÁµÄ¹ý³ÌÖÐÓÃÎÄ¼þÁ÷È¥¶ÁconfÎÄ¼þÏÂµÄweb.xmlÎÄµµ
-54 ·µ»ØÒ»¸öDocumentµÄÊµÀý£¬È»ºóÎÒÃÇÍ¨¹ýÕâ¸öÊµÀýÈ¥»ñÈ¡¸ùÔªËØ£¨¸ú±êÇ©£©£¬·µ»ØÒ»¸öElementµÄÊµÀý£¬Í¨¹ýElementÌá¹©µÄ·½·¨»ñÈ¡ËùÓÐÓëmime-mapping
-55 Í¬ÃûµÄ×Ó±êÇ©£¬×îºóÎÒÃÇ±éÀúËùÓÐ×Ó±êÇ©£¬½«web.xmlÎÄ¼þÖÐmime-mapping±êÇ©ÏÂµÄextendinos×÷ÎªkeyÖµ¼ÓÈëmimeTypeMapping¼¯ºÏ£¬½«web.xmlÎÄ¼þÖÐmime-type
-56 ×÷Îªvalue´æÈëmimeTypeMapping¼¯ºÏÖÐ
+32ï¿½ï¿½ï¿½ï¿½HttpResponseï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä·ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦Í·ï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½Mapï¿½ï¿½setï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Mapï¿½ï¿½ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½keyï¿½ï¿½value
+Æ´ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½Ï¢Í·
+33ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Í·
+ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ê±ï¿½ò¶¼»ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ð¶ï¿½È¡ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½áµ½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½redLingï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½È¡ï¿½Ö·ï¿½ï¿½ï¿½
+34ï¿½ï¿½ï¿½ï¿½HttpResponseï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½headersï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Mapï¿½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦Í·ï¿½ï¿½Ï¢
+35ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½parseHeadersï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+36ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½whileÑ­ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½Ó²ï¿½ï¿½Ò¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½":"
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Õ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½Ý½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½(key)name,ï¿½ï¿½ï¿½Ò±ßµï¿½ï¿½ï¿½ï¿½Ý½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½value
+        È»ï¿½ï¿½ï¿½ï¿½ï¿½Mapï¿½ï¿½ï¿½Ïµï¿½Setï¿½ï¿½ï¿½ï¿½ï¿½Ñ½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½Mapï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½
+37 ï¿½ï¿½ï¿½ï¿½Uri
+37 ï¿½ï¿½ï¿½ï¿½ï¿½áµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æµ¥ï¿½ï¿½È¥ï¿½ï¿½
+38 ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½Ò»ï¿½ï¿½paramï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
+39 ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½uriï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½uriï¿½ï¿½ï¿½ï¿½ï¿½Ý¸ï¿½Öµï¿½ï¿½requestLineï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+40 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½uriï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý´Ó¿ï¿½Ê¼ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½Öµï¿½ï¿½requestLineï¿½ï¿½ï¿½ï¿½
+41 ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½uriï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý´Ó¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Î»ï¿½ï¿½Ê¼ï¿½ï¿½È¡ï¿½ï¿½Ä©Î²ï¿½ï¿½È»ï¿½ï¿½Öµï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½queryStr
+42 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½queryStrï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý°ï¿½ï¿½Õ¡ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ÖµÃµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½é£¬È»ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½
+43 ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù´Î°ï¿½ï¿½Õ¡ï¿½=ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½Ö£ï¿½È»ï¿½ï¿½Óµï¿½mapï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+44 ï¿½ï¿½ï¿½×¢ï¿½á¹¦ï¿½Ü£ï¿½
+45 ï¿½Ã»ï¿½ï¿½Ù·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³Ð©ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½×¢ï¿½ï¿½ÎªÊµï¿½ï¿½Ð´
+46 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½è·µï¿½Ø¸ï¿½ï¿½Í»ï¿½
+47 ï¿½ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½Ò»ï¿½ï¿½Ò³ï¿½æ£¬ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ÃºÃ£ï¿½È»ï¿½ï¿½Øµï¿½WebSererï¿½ï¿½
+48 È»ï¿½ï¿½ï¿½È¡ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½Ã»ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½
+49 ï¿½ï¿½ï¿½ï¿½ï¿½finallyï¿½ï½«×ªï¿½ï¿½ï¿½ï¿½ï¿½Ø±ï¿½
+50 ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½
+51 ï¿½Þ¸ï¿½HttpContextï¿½à£¬ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½
+52 ï¿½ï¿½ï¿½ï¿½Ä¿Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½confÄ¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½web.xmlï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Ö±ï¿½ï¿½Ê¹ï¿½ï¿½tomcatï¿½ï¿½Ä¿Â¼ï¿½ï¿½
+   confÄ¿Â¼ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
+53 ï¿½ï¿½ï¿½ï¿½HttpContextï¿½à£¬ï¿½ï¿½ï¿½ï¿½mimeTypeMappingï¿½à£¬ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½SAXReaderï¿½Ö½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½È¥ï¿½ï¿½confï¿½Ä¼ï¿½ï¿½Âµï¿½web.xmlï¿½Äµï¿½
+54 ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Documentï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½È¥ï¿½ï¿½È¡ï¿½ï¿½Ôªï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½Ç©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Elementï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½Elementï¿½á¹©ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mime-mapping
+55 Í¬ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½Ç©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½Ç©ï¿½ï¿½ï¿½ï¿½web.xmlï¿½Ä¼ï¿½ï¿½ï¿½mime-mappingï¿½ï¿½Ç©ï¿½Âµï¿½extendinosï¿½ï¿½ÎªkeyÖµï¿½ï¿½ï¿½ï¿½mimeTypeMappingï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½web.xmlï¿½Ä¼ï¿½ï¿½ï¿½mime-type
+56 ï¿½ï¿½Îªvalueï¿½ï¿½ï¿½ï¿½mimeTypeMappingï¿½ï¿½ï¿½ï¿½ï¿½ï¿½///////
 
